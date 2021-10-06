@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background-image: url(./images/boloto.jpg);
+}
+
+.slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+}
+
+.slider__wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  z-index: 1;
+}
+
+.slides__container {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: -400px;
+  width: 10000px;
+}
+
+.slides__container.shifting {
+  transition: left 0.2s ease-out;
+}
+
+.slide {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.dots__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  background: #ff8a3c;
+  border-radius: 50%;
+}
+.dot.active {
+  transform: scale(1.2);
+}
+
+.control {
+  position: absolute;
+  top: 40%;
+  width: 35px;
+  height: 55px;
+  background-color: rgb(14, 71, 16);
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.button-prev,
+.button-next {
+  background-size: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.button-prev {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png);
+  left: -5%;
+}
+
+.button-next {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
+  right: -5%;
+}
+
+.button-prev:active,
+.button-next:active {
+  background-color: rgb(10, 45, 11);
+}
